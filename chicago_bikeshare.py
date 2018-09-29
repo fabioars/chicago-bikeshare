@@ -91,6 +91,7 @@ input("Aperte Enter para continuar...")
 # TODO: Crie uma função para contar os gêneros. Retorne uma lista.
 # Isso deveria retornar uma lista com [count_male, count_female] (exemplo: [10, 15] significa 10 Masculinos, 15 Femininos)
 def count_gender(data_list):
+    gender_list = column_to_list(data_list, -2)
     male = len([ gender for gender in gender_list if gender == 'Male' ])
     female = len([ gender for gender in gender_list if gender == 'Female' ])
     return [male, female]
@@ -148,7 +149,22 @@ input("Aperte Enter para continuar...")
 # TAREFA 7
 # TODO: Crie um gráfico similar para user_types. Tenha certeza que a legenda está correta.
 print("\nTAREFA 7: Verifique o gráfico!")
+def count_types(data_list):
+    types_list = column_to_list(data_list, -3)
+    customer = len([ user_type for user_type in types_list if user_type == 'Customer' ])
+    subscriber = len([ user_type for user_type in types_list if user_type == 'Subscriber' ])
+    return [customer, subscriber]
 
+types_list = column_to_list(data_list, -3)
+types = ['Customer', 'Subscriber']
+quantity = count_types(data_list)
+y_pos = list(range(len(types)))
+plt.bar(y_pos, quantity)
+plt.ylabel('Quantidade')
+plt.xlabel('Tipo')
+plt.xticks(y_pos, types)
+plt.title('Quantidade por Tipo')
+plt.show(block=True)
 
 input("Aperte Enter para continuar...")
 # TAREFA 8
