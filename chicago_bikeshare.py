@@ -56,6 +56,14 @@ input("Aperte Enter para continuar...")
 # TAREFA 3
 # TODO: Crie uma função para adicionar as colunas(features) de uma lista em outra lista, na mesma ordem
 def column_to_list(data, index):
+    """
+    Recupera todos os itens de uma coluna
+    Argumentos:
+        data_list: Dados
+        index: Número da coluna
+    Retorna:
+        Retorna uma lista com todos os elementos da coluna
+    """
     column_list = [item[index] for item in data]
     # Dica: Você pode usar um for para iterar sobre as amostras, pegar a feature pelo seu índice, e dar append para uma lista
     return column_list
@@ -94,6 +102,13 @@ input("Aperte Enter para continuar...")
 # TODO: Crie uma função para contar os gêneros. Retorne uma lista.
 # Isso deveria retornar uma lista com [count_male, count_female] (exemplo: [10, 15] significa 10 Masculinos, 15 Femininos)
 def count_gender(data_list):
+    """
+    Conta quantos usuários por gênero
+    Argumentos:
+        data_list: Dados
+    Retorna:
+        Retorna uma lista onde o elemento 0 é do genero 'Male' e o 1 é do tipo 'Female'
+    """
     gender_list = column_to_list(data_list, -2)
     male = len([ gender for gender in gender_list if gender == 'Male' ])
     female = len([ gender for gender in gender_list if gender == 'Female' ])
@@ -115,6 +130,16 @@ input("Aperte Enter para continuar...")
 # TODO: Crie uma função que pegue o gênero mais popular, e retorne este gênero como uma string.
 # Esperamos ver "Male", "Female", ou "Equal" como resposta.
 def most_popular_gender(data_list):
+    """
+    Verifica qual gênero é o mais popular
+    Argumentos:
+        data_list: Dados
+    Retorna:
+        Uma string dizendo qual é mais popular.
+            'Male' caso o masculino for o mais popular
+            'Female' caso o feminino for o mais popular
+            'Equal' caso os dois estejam em igual número
+    """
     gender_count = count_gender(data_list)
     answer = ""
 
@@ -153,6 +178,13 @@ input("Aperte Enter para continuar...")
 # TODO: Crie um gráfico similar para user_types. Tenha certeza que a legenda está correta.
 print("\nTAREFA 7: Verifique o gráfico!")
 def count_types(data_list):
+    """
+    Conta quantos usuários por tipos
+    Argumentos:
+        data_list: Dados
+    Retorna:
+        Retorna uma lista onde o elemento 0 é do tipo 'Customer' e o 1 é do tipo 'Subscriber'
+    """
     types_list = column_to_list(data_list, -3)
     customer = len([ user_type for user_type in types_list if user_type == 'Customer' ])
     subscriber = len([ user_type for user_type in types_list if user_type == 'Subscriber' ])
@@ -231,15 +263,15 @@ input("Aperte Enter para continuar...")
 # TAREFA 11
 # Volte e tenha certeza que você documentou suas funções. Explique os parâmetros de entrada, a saída, e o que a função faz. Exemplo:
 # def new_function(param1: int, param2: str) -> list:
-    #   """
-    #   Função de exemplo com anotações.
-    #   Argumentos:
-    #       param1: O primeiro parâmetro.
-    #       param2: O segundo parâmetro.
-    #   Retorna:
-    #       Uma lista de valores x.
+#       """
+#       Função de exemplo com anotações.
+#       Argumentos:
+#           param1: O primeiro parâmetro.
+#           param2: O segundo parâmetro.
+#       Retorna:
+#           Uma lista de valores x.
 
-    #   """
+#       """
 
 input("Aperte Enter para continuar...")
 # TAREFA 12 - Desafio! (Opcional)
