@@ -53,7 +53,7 @@ input("Aperte Enter para continuar...")
 # TAREFA 3
 # TODO: Crie uma função para adicionar as colunas(features) de uma lista em outra lista, na mesma ordem
 def column_to_list(data, index):
-    column_list = []
+    column_list = [item[index] for item in data]
     # Dica: Você pode usar um for para iterar sobre as amostras, pegar a feature pelo seu índice, e dar append para uma lista
     return column_list
 
@@ -72,8 +72,9 @@ input("Aperte Enter para continuar...")
 # Agora sabemos como acessar as features, vamos contar quantos Male (Masculinos) e Female (Femininos) o dataset tem
 # TAREFA 4
 # TODO: Conte cada gênero. Você não deveria usar uma função para isso.
-male = 0
-female = 0
+gender_list = column_to_list(data_list, -2)
+male = len([ gender for gender in gender_list if gender == 'Male' ])
+female = len([ gender for gender in gender_list if gender == 'Female' ])
 
 
 # Verificando o resultado
@@ -90,8 +91,8 @@ input("Aperte Enter para continuar...")
 # TODO: Crie uma função para contar os gêneros. Retorne uma lista.
 # Isso deveria retornar uma lista com [count_male, count_female] (exemplo: [10, 15] significa 10 Masculinos, 15 Femininos)
 def count_gender(data_list):
-    male = 0
-    female = 0
+    male = len([ gender for gender in gender_list if gender == 'Male' ])
+    female = len([ gender for gender in gender_list if gender == 'Female' ])
     return [male, female]
 
 
