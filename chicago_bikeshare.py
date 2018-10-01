@@ -219,7 +219,7 @@ input("Aperte Enter para continuar...")
 # TAREFA 9
 # TODO: Ache a duração de viagem Mínima, Máxima, Média, e Mediana.
 # Você não deve usar funções prontas para isso, como max() e min().
-trip_duration_list = sorted(map(lambda i: float(i), column_to_list(data_list, 2)))
+trip_duration_list = sorted(map(float, column_to_list(data_list, 2)))
 min_trip = trip_duration_list[0]
 max_trip = trip_duration_list[-1]
 mean_trip = reduce((lambda x, y: x + y), trip_duration_list)/len(trip_duration_list)
